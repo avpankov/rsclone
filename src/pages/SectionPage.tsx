@@ -31,6 +31,7 @@ function SectionPage({
       <div className="mixes">
         {playlists.length > 0
           ? playlists.map((playlist: IPlaylistsItems) => (
+            playlist ? (
               <Mix
                 key={`${playlist.name}${Math.random()}`}
                 image={playlist.images[0].url}
@@ -40,6 +41,7 @@ function SectionPage({
                 setPlaylistsID={setPlaylistsID}
                 setRandomColor={setRandomColor}
               />
+              ) : ''
             ))
           : ""}
       </div>
