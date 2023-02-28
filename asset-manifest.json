@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/rsclone/static/css/main.fdc0f22e.css",
-    "main.js": "/rsclone/static/js/main.e9e34291.js",
+    "main.js": "/rsclone/static/js/main.fa498b57.js",
     "static/media/rs_school_js.svg": "/rsclone/static/media/rs_school_js.ad178c0df28bc133be34b982d62f431d.svg",
     "static/media/spotify-logo.svg": "/rsclone/static/media/spotify-logo.7265e7c216468e45fb66e2d970a8251a.svg",
     "static/media/settings-icon.svg": "/rsclone/static/media/settings-icon.649a492f4496cccfc04ed97ee1f31b82.svg",
@@ -40,10 +40,10 @@
     "static/media/button-play.svg": "/rsclone/static/media/button-play.b0e5fde6d6cfe38fed664d4dcfe39e1e.svg",
     "static/media/cancel.svg": "/rsclone/static/media/cancel.a5bbe406862bbd84f75b41e4425041c1.svg",
     "main.fdc0f22e.css.map": "/rsclone/static/css/main.fdc0f22e.css.map",
-    "main.e9e34291.js.map": "/rsclone/static/js/main.e9e34291.js.map"
+    "main.fa498b57.js.map": "/rsclone/static/js/main.fa498b57.js.map"
   },
   "entrypoints": [
     "static/css/main.fdc0f22e.css",
-    "static/js/main.e9e34291.js"
+    "static/js/main.fa498b57.js"
   ]
 }
