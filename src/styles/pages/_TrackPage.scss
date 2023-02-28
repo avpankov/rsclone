@@ -1,0 +1,76 @@
+.track-page {
+  background: #222222;
+
+  .popular-tracks {
+    padding: 0 32px;
+
+    .popular-tracks_title{
+      font-size: 0.875rem;
+      color: #b3b3b3;
+    }
+
+    .popular-tracks_artist {
+      margin-bottom: 30px;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #FFFFFF;
+    }
+  }
+
+  .traks-from-album {
+    padding: 20px;
+
+    .traks-from-album_header {
+      display: flex;
+      height: 80px;
+      background:hsla(0,0%,100%,.1);
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      margin-bottom: 1px;
+
+      .traks-from-album_img {
+        width: 80px;
+        height: 100%;
+        border-top-left-radius: 8px;
+      }
+
+      .traks-from-album_dscr {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        margin-left: 20px;
+        color: #FFFFFF;
+
+        .traks-from-album_title {
+          font-size: 0.6875rem;
+        }
+
+        .traks-from-album_name {
+          margin-top: 5px;
+          font-weight: 700;
+        }
+      }
+    }
+
+    .traks-from-album_header:hover {
+      background: hsla(0,0%,100%,.3);
+    }
+  }
+}
+
+
+@media (max-width: 749px) {
+  .track-page {
+    .popular-tracks {
+      padding: 0 4px;
+
+      .popular-tracks_artist {
+        font-size: 1.2rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+}

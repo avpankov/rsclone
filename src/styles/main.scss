@@ -1,0 +1,77 @@
+@import './base/normalize';
+
+@import './abstracts/variables';
+
+@import './components/Buttons';
+@import './components/PlayingBar/PlayingBar';
+@import './components/PlayingBar/PlayingWidget';
+@import './components/PlayingBar/PlayerControls';
+@import './components/PlayingBar/PlayerTools';
+@import './layout/MainViewPage';
+@import './layout/NavBar';
+@import './components/SettingsBar';
+@import './components/MixesBlock';
+@import './components/Mix';
+@import './components/TracklistRow';
+@import './components/Preload';
+@import './components/PageHeader';
+@import './components/PageControlPanel';
+@import './components/ArtistsAlbumsBlock';
+@import './components/ModalWindow';
+
+@import './layout/SearchPage';
+@import './layout/Disclaimer';
+@import './components/SearchBar';
+@import './components/Header';
+@import './components/CategoryCard';
+@import './components/ButtonMenu';
+@import './components/SearchResultArtist';
+@import './components/SearchResultSong';
+
+@import './pages/AuthPage';
+@import './pages/SearchPage';
+@import './pages/PlaylistPage';
+
+@import './pages/Library';
+@import './components/LikedSongs';
+
+@import './pages/TrackPage';
+@import './pages/ArtistPage';
+
+@import './components/EditPlaylist';
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+}
+
+main {
+  display: grid;
+  grid-template-areas:
+      "nav-bar settings-bar"
+      "nav-bar main-view"
+      "playing-bar playing-bar";
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+  overflow-y: hidden;
+  min-height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+@media (max-width: 749px) {
+  main {
+    grid-template-areas:
+        "settings-bar settings-bar"
+        "main-view main-view"
+        "playing-bar playing-bar"
+        "nav-bar nav-bar";
+  }
+}
+

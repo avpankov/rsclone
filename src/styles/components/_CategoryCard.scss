@@ -1,0 +1,35 @@
+.category-card {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    position: relative;
+    background-color: rgb(225, 51, 0);
+    padding-bottom: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+
+    & > div {
+        img {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            bottom: 0;
+            right: 0;
+            transform: rotate(25deg) translate(18%,-2%);
+            box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);
+        }
+    }
+
+    .category-card__title {
+        font-size: 24px;
+        color: #fff;
+        position: absolute;
+        font-weight: 700;
+        top: 21px;
+        left: 22px;
+    }
+
+    .category-card__img {
+        width: 45%;
+        height: 45%;
+    }
+}

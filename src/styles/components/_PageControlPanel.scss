@@ -1,0 +1,60 @@
+.tracklist-table {
+  position: relative;
+  padding: 24px 32px;
+  background: #222222;
+}
+
+.tracklist-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 128px;
+}
+
+.control-panel{
+  display: flex;
+  align-items: center;
+  height: 104px;
+  padding-bottom: 24px;
+}
+
+.play-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 32px;
+  width: 56px;
+  height: 56px;
+  background: #1ED760;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.play-btn:hover {
+  transform: scale(1.1);
+  transition: all 0.5s;
+}
+
+.like-btn {
+  fill: #FFFFFF70;
+  z-index: 1;
+}
+
+.like-btn:hover {
+  fill: #FFFFFF;
+}
+
+@media (max-width: 749px)  {
+  .tracklist-table {
+    padding: 24px 4px;
+  }
+
+  .tracklist-gradient {
+    display: none;
+  }
+
+  .control-panel {
+    display: none;
+  }
+}

@@ -1,0 +1,91 @@
+.auth-page {
+  width: 100vw;
+  height: 100vh;
+}
+
+.auth-page__container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.auth-page__login {
+  flex-basis: content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 30px;
+  width: 40%;
+  margin-top: -200px;
+}
+
+.auth-page__login__description {
+  width: 280px;
+  line-height: 20px;
+  margin-top: -20px;
+}
+
+.spotify-logo {
+  display: flex;
+  align-items: center;
+  font-size: 42px;
+  font-weight: 700;
+  svg {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.rs-school-logo {
+  width: 150px;
+}
+
+.auth-page .auth-page__preview {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+
+  .auth-page__preview__container {
+    width: 100%;
+    height: 70%;
+    border-radius: 15px 15px 0 0;
+    overflow: hidden;
+    box-shadow: 0px 0px 35px rgba(107, 107, 107, 0.678);
+    background-color: rgb(36, 36, 36);
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+
+@media (max-width: 850px) {
+  .spotify-logo {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 700;
+    svg {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  .auth-page__login__description {
+    width: 150px;
+  }
+
+  .auth-page__login {
+    margin-top: -100px;
+  }
+
+}

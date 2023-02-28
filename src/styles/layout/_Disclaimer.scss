@@ -1,0 +1,51 @@
+.disclaimer {
+  h3 {
+    text-align: center;
+  }
+  p {
+    text-align: justify;
+    margin: 15px 0;
+    line-height: 20px;
+  }
+}
+
+.disclaimer__contatcs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 5px;
+
+  span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+}
+
+.account-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 30px;
+}
+
+.disclaimer__button {
+  margin-top: -10px;
+  font-size: 14px;
+  border-bottom: 1px dotted black;
+  cursor: pointer;
+}
+
+
+@media (max-width: 850px) {
+  .disclaimer {
+    padding-top: 400px;
+  }
+
+  .disclaimer__contatcs {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

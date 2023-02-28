@@ -1,0 +1,26 @@
+.playing-bar {
+  background-color: $playing-bar-background;
+  color: $text-additional-color;
+  border-top: 1px solid #282828;
+  position: relative;
+  bottom: 0;
+}
+
+.playing-bar__wrapper {
+  height: 90px;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.playing-bar__container {
+  grid-area: playing-bar;
+}
+
+@media (max-width: 749px) {
+  .playing-bar__wrapper  {
+    padding: 0 2px;
+  }
+}

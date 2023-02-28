@@ -1,0 +1,76 @@
+.tracklist-table_title {
+  position: sticky;
+  top: 0;
+  display: grid;
+  grid-template-columns: [index] 16px [first] 6fr [var1] 4fr [var2] 3fr [last] minmax(120px, 1fr);
+  height: 36px;
+  grid-gap: 16px;
+  align-items: center;
+  padding: 0 16px;
+  color: #b3b3b3;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  background: #222222;
+  z-index: 1;
+}
+
+.title-number {
+  justify-self: end;
+}
+
+.title-time {
+  margin: 3px 32px 0 0;
+}
+
+.title-time.track-time_right {
+  margin: 3px 0 0 0;
+}
+
+.line {
+  position: sticky;
+  top: 36px;
+  display: block;
+  margin-bottom: 16px;
+  width: 100%;
+  height: 1px;
+  background-color: #b3b3b3;
+  opacity: 0.3;
+}
+
+.no-tracks_ad {
+  color: #FFFFFF;
+  font-size: 1.5rem;
+}
+
+.copyrights {
+  margin-top: 30px;
+  color: #b3b3b3;
+
+  .copyrights-date {
+    font-size: 0.8125rem;
+  }
+
+  .copyrights-text {
+    font-size: 0.6875rem;
+  }
+}
+
+@media (max-width: 980px) {
+  .tracklist-table_title {
+    grid-template-columns: [index] 1fr [first] 13fr [var1] 0fr [var2] 0fr [last] minmax(0px,1fr);
+    padding: 0 4px;
+  }
+
+  .title-album {
+    display: none;
+  }
+
+  .title-date {
+    display: none;
+  }
+
+  .title-time {
+    margin: 3px 0 0 0;
+  }
+}

@@ -1,0 +1,67 @@
+.player-tools {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  width: 30%;
+}
+
+.volume-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 125px;
+}
+
+.volume-bar__range {
+  width: 100%;
+}
+
+#volume-bar__range-input {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  background: #535353;
+  background: linear-gradient(to right, #fff 0%, #fff 50%, #535353 50%, #535353 100%);
+  border-radius: 5px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+#volume-bar__range-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 0;
+  height: 0;
+}
+
+.volume-bar__range:hover {
+  #volume-bar__range-input {
+    background: linear-gradient(to right, #1db954 0%, #1db954 50%, #535353 50%, #535353 100%);
+  }
+  #volume-bar__range-input::-webkit-slider-thumb {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: $text-main-color;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 749px) {
+  .player-tools {
+    width: 20%;
+  }
+
+  .volume-bar__range {
+    transform: rotate(270deg);
+    width: 10vh;
+    height: 5%;
+  }
+
+  .volume-bar {
+    width: 100%;
+  }
+
+}

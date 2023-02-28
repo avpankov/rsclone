@@ -1,0 +1,231 @@
+.tracklist-row {
+  display: grid;
+  grid-template-columns: [index] 16px [first] 6fr [var1] 4fr [var2] 3fr [last] minmax(120px,1fr);
+  height: 56px;
+  grid-gap: 16px;
+  align-items: center;
+  padding: 0 16px;
+  font-size: 0.875rem;
+  color: #b3b3b3;
+
+  .track-number {
+    justify-self: end;
+    font-size: 1rem;
+  }
+
+  .track-info {
+    display: flex;
+    flex-direction: row;
+
+    .track-img {
+      margin-right: 16px;
+      width: 40px;
+      height: 40px;
+    }
+
+    .track-dscr {
+      .track-name {
+        position: relative;
+        font-size: 1rem;
+        color: #FFFFFF;
+        text-decoration: none;
+        cursor: pointer;
+        -webkit-line-clamp: 1;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .track-name:hover {
+        text-decoration: underline;
+      }
+
+      .track-artist {
+        color: #b3b3b3;
+        text-decoration: none;
+        cursor: pointer;
+        -webkit-line-clamp: 2;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .track-artist:hover {
+        color: #FFFFFF;
+        text-decoration: underline;
+      }
+
+    }
+  }
+
+  .track-album {
+    color: #FFFFFF;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .track-album:hover {
+    color: #FFFFFF;
+    text-decoration: underline;
+  }
+
+
+  .last-block {
+    display: flex;
+    gap: 40px;
+    position: relative;
+
+    .track-options {
+      position: absolute;
+      left: 85%;
+      top: -30%;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: transparent;
+      transition: all ease 0.3s;
+      cursor: pointer;
+      
+      svg {
+        position: absolute;
+        left: 45%;
+        top: 20%;
+        fill: #FFFFFF;
+        width: 3px;
+        height: 18px;
+      }
+    }
+
+    .options-menu {
+      position: absolute;
+      top: 0;
+      left: -500%;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 150px;
+      padding: 2px;
+      background-color: #282828;
+      border-radius: 4px;
+      box-shadow: 0 16px 24px rgb(0 0 0 / 30%), 0 6px 8px rgb(0 0 0 / 20%);
+    }
+
+    .hidden {
+      display: none;
+    }
+  }
+}
+
+.tracklist-row:hover .last-block {
+  .like-btn {
+    display: block;
+  }
+}
+
+.tracklist-row .last-block {
+  .like-btn {
+    display: none;
+  }
+}
+
+.tracklist-row .track-number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .number {
+    display: inline;
+  }
+  button {
+    display: none;
+  }
+}
+
+.tracklist-row:hover .track-number {
+  .number {
+    display: none;
+  }
+  button {
+    display: block;
+    padding-left: 20px;
+  }
+}
+
+.tracklist-row:hover {
+  background: #282828;
+  border-radius: 4px;
+}
+
+.tracklist-active {
+  background: hsla(0,0%,100%,.3);
+  border-radius: 4px;
+}
+
+.add-to-playlist {
+  position: relative;
+
+  .list-of-playlists {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    border-radius: 4px;
+    box-shadow: 0 16px 24px rgb(0 0 0 / 30%), 0 6px 8px rgb(0 0 0 / 20%);
+    width: 150px;
+    padding: 2px;
+
+    .list-of-playlists__item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      transition: all ease 0.3s;
+      background-color: #282828;
+
+      .list-of-playlists__item:hover {
+        background-color: #3d3c3c;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 980px) {
+  .tracklist-row {
+    grid-template-columns: [index] 1fr [first] 13fr [var1] 0fr [var2] 0fr [last] minmax(0px,1fr);
+    padding: 0 4px;
+
+    .track-number {
+      font-size: 0.85rem;
+    }
+
+    .track-info {
+      .track-dscr {
+        .track-name > p {
+          font-size: 0.85rem;
+          margin: 0;
+        }
+
+        .track-artist > p {
+          font-size: 0.75rem;
+          margin: 0;
+        }
+      }
+    }
+
+    .track-album {
+      display: none;
+    }
+
+    .track-data {
+      display: none;
+    }
+
+    .last-block {
+      gap: 20px;
+    }
+  }
+
+}

@@ -1,0 +1,33 @@
+.library {
+
+}
+
+.library__container {
+    max-width: 1620px;
+    padding: 20px 32px 0 32px;
+    color: #fff;
+
+    .library__title {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 16px;
+    }
+
+    .library__playlists {
+        display: grid;
+        gap: 24px;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 207px));
+    }
+}
+
+
+
+@media (max-width: 749px) {
+    .library__container {
+        padding: 20px 4px 0 4px;
+        .library__playlists {
+            gap: 12px;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+        }
+    }
+    }

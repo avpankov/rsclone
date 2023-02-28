@@ -1,0 +1,81 @@
+.player-tool-button {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  svg {
+    fill: $text-additional-color;
+
+    &:hover {
+      fill: $text-main-color;
+    }
+  }
+}
+
+.play-pause-button {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background-color: $text-main-color;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  svg {
+    fill: $playing-bar-background;
+  }
+
+  &:hover {
+    transform: scale(1.06);
+  }
+
+  &:active {
+    transform: scale(0.99);
+  }
+}
+
+.login-btn {
+  padding: 13px 20px;
+  background: #1ED760;
+  border: none;
+  border-radius: 500px;
+  font-family: 'DM Sans';
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 20px;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: trancform 0.3s;
+  
+  a {
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+}
+
+.login-btn:hover {
+  transform: scale(1.06);
+}
+
+@media (max-width: 749px) {
+  .player-tool-button {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (max-width: 400px) {
+  .player-tool-button {
+    width: 16px;
+    height: 16px;
+  }
+}

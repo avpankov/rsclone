@@ -1,0 +1,119 @@
+.search-result-songs__container {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+}
+
+.search-result-song {
+  height: 56px;
+  padding: 0 16px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  color: $text-additional-color;
+  position: relative;
+
+  &:hover {
+    background-color: #282828;
+
+    .player-tool-button:not(:last-of-type) {
+      visibility: visible;
+    }
+
+    .search-result-song__image {
+      button {
+        visibility: visible;
+      }
+    }
+
+  }
+
+  .track-info {
+    flex-basis: 60%;
+    margin: 0;
+
+    .track-name {
+      font-size: 16px;
+      -webkit-line-clamp: 1;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .track-author {
+      font-size: 13px;
+    }
+  }
+
+  .player-tool-button:not(:last-of-type) {
+    visibility: hidden;
+  }
+
+  .search-result-song__image {
+    button {
+      visibility: hidden;
+    }
+  }
+
+  .more-info {
+    position: absolute;
+    color: white;
+    top: 0;
+    left: 73%;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    padding: 2px;
+    background-color: #282828;
+    border-radius: 4px;
+    box-shadow: 0 16px 24px rgb(0 0 0 / 30%), 0 6px 8px rgb(0 0 0 / 20%);
+  }
+
+  .hidden {
+    display: none;
+  }
+}
+
+.search-result-song__image {
+  width: 40px;
+  height: 40px;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .player-tool-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7 );
+    z-index: 100;
+
+    svg {
+      fill: $text-main-color;
+    }
+  }
+}
+
+.track_selected {
+  background-color: #373737;
+  border-radius: 4px;
+}
+
+@media (max-width: 749px) {
+  .search-result-songs__container {
+    width: 100%;
+  }
+}
+
+

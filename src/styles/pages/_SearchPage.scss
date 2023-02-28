@@ -1,0 +1,78 @@
+.render-search-results {
+  display: flex;
+  flex-direction: column;
+}
+
+.render-search-results__artist-and-track-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+
+
+.mixes-block-header-title {
+  margin-bottom: 20px;
+}
+
+.render-search-results__albums {
+  .mixes-block-header-title {
+    margin-top: 30px;
+  }
+}
+
+.no-results {
+  padding-top: 200px;
+  color: $text-main-color;
+  text-align: center;
+
+  h2 {
+    padding-bottom: 10px;
+  }
+}
+
+.search-tags {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+
+.search-tag {
+  padding: 7px 11px;
+  background-color: #313131;
+  color: $text-main-color;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 20px;
+
+  &:hover {
+    background-color: #393939;
+  }
+}
+
+.search-tag_active {
+  color: #313131;
+  background-color: $text-main-color;
+
+  &:hover {
+    background-color: $text-main-color;
+  }
+}
+
+.tracklist-search-page .tracklist-table_title {
+  grid-template-columns: [index] 16px [first] 6fr [var1] 4fr [var2] minmax(120px, 1fr);
+}
+
+
+@media (max-width: 749px) {
+  .render-search-results__artist-and-track-container {
+    flex-direction: column;
+  }
+
+  .tracklist-search-page .tracklist-table_title {
+    grid-template-columns: [index] 1fr [first] 13fr [var1] 0fr [var2] 0fr [last] minmax(0px,1fr);
+  }
+
+}

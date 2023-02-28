@@ -1,0 +1,27 @@
+.artist-page {
+  background: #222222;
+
+  .popular-tracks {
+    padding: 0 32px;
+
+    .popular-tracks_title{
+      margin-bottom: 30px;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #FFFFFF;
+    }
+  }
+
+}
+
+@media (max-width: 749px) {
+  .artist-page {
+    .popular-tracks {
+      padding: 0 4px;
+
+      .popular-tracks_title{
+        font-size: 1.2rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+.mixes-block {
+  padding: 20px ;
+}
+
+.mixes-block-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-weight: 700;
+}
+
+.mixes-block-header-title {
+  font-size: 24px;
+  color: #FFFFFF;
+  user-select: none;
+}
+
+.mixes-block-header-show {
+  margin-bottom: 20px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #FFFFFF;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.mixes-block-header-show:hover {
+  text-decoration: underline;
+  transition: all 0.5s;
+}
+
+.mixes {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: scroll;
+  gap: 24px;
+}
+
+.mixes::-webkit-scrollbar {
+  background: none;
+  width: 0;
+  height: 4px;
+}
+
+.mixes::-webkit-scrollbar-thumb {
+  background: #535353;
+}
+
+.mixes::-webkit-scrollbar-thumb:hover {
+  background: #b3b3b3;
+}
+
+
+@media (max-width: 749px) {
+  .mixes-block-header-title {
+    font-size: 1.2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
