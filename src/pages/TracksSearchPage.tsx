@@ -40,8 +40,7 @@ function TracksSearchPage({
 
   useEffect(() => {
     setStrId(getTracksIds());
-  }, [tracks])
-
+  }, [tracks]);
 
   function getTracksIds() {
     let ids = "";
@@ -75,7 +74,6 @@ function TracksSearchPage({
     getListOfSavedPlaylists();
   }, []);
 
-
   return (
     <div className="tracklist-search-page">
       <div className="tracklist-table_title">
@@ -87,28 +85,32 @@ function TracksSearchPage({
         </div>
       </div>
       <div className="line"></div>
-      {tracks?.map((item, index) => (
-        <TracklistRow
-          key={`${item.name}${Math.random()}`}
-          number={index + 1}
-          image={item.album!.images[0].url}
-          name={item.name}
-          trackID={item.id}
-          setTrackID={setTrackID}
-          artist={item.artists[0].name}
-          artistID={item.artists[0].id}
-          album={item.album!.name}
-          albumID={item.album!.id}
-          setAlbumID={setAlbumID}
-          setArtistID={setArtistID}
-          duration={item.duration_ms}
-          setRandomColor={setRandomColor}
-          isPlaying={(item.id === audio.dataset.track_id) ? true : false}
-          list={list}
-          addedTrack={listIds[tracks.indexOf(item)]}
-          uri={item.uri}
-        />
-      ))}
+      {tracks?.map((item, index) =>
+        item ? (
+          <TracklistRow
+            key={`${item.name}${Math.random()}`}
+            number={index + 1}
+            image={item.album!.images[0].url}
+            name={item.name}
+            trackID={item.id}
+            setTrackID={setTrackID}
+            artist={item.artists[0].name}
+            artistID={item.artists[0].id}
+            album={item.album!.name}
+            albumID={item.album!.id}
+            setAlbumID={setAlbumID}
+            setArtistID={setArtistID}
+            duration={item.duration_ms}
+            setRandomColor={setRandomColor}
+            isPlaying={item.id === audio.dataset.track_id ? true : false}
+            list={list}
+            addedTrack={listIds[tracks.indexOf(item)]}
+            uri={item.uri}
+          />
+        ) : (
+          ""
+        )
+      )}
     </div>
   );
 }

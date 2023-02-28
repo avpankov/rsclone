@@ -26,22 +26,26 @@ function ArtistBlock({
         <p className="mixes-block-header-title">Fans also like</p>
       </div>
       <div className="mixes">
-        {albums?.map((item) => (
-          <Mix
-            key={`${item.name}${Math.random()}`}
-            image={
-              item.images && item.images.length > 0
-                ? item.images[0].url
-                : "https://lab.possan.se/thirtify/images/placeholder-playlist.png"
-            }
-            name={item.name}
-            description={item.type}
-            artistID={item.id}
-            setArtistID={setArtistID}
-            setRandomColor={setRandomColor}
-            circle={circle}
-          />
-        ))}
+        {albums?.map((item) =>
+          item ? (
+            <Mix
+              key={`${item.name}${Math.random()}`}
+              image={
+                item.images && item.images.length > 0
+                  ? item.images[0].url
+                  : "https://lab.possan.se/thirtify/images/placeholder-playlist.png"
+              }
+              name={item.name}
+              description={item.type}
+              artistID={item.id}
+              setArtistID={setArtistID}
+              setRandomColor={setRandomColor}
+              circle={circle}
+            />
+          ) : (
+            ""
+          )
+        )}
       </div>
     </div>
   );

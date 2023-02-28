@@ -32,7 +32,7 @@ function AllSearchPage({
 
   useEffect(() => {
     setStrId(getTracksIds());
-  }, [searchResult])
+  }, [searchResult]);
 
   function getTracksIds() {
     let ids = "";
@@ -115,17 +115,23 @@ function AllSearchPage({
           <p className="mixes-block-header-title">Albums</p>
         </div>
         <div className="mixes">
-          {searchResult.albums.items.map((item) => (
-            <Mix
-              key={`${item.id}${Math.random()}`}
-              image={item.images[0].url}
-              name={item.artists[0].name}
-              description={`${item.release_date.split("-")[0]} • ${item.name}`}
-              albumID={item.id}
-              setAlbumID={setAlbumID}
-              setRandomColor={setRandomColor}
-            />
-          ))}
+          {searchResult.albums.items.map((item) =>
+            item ? (
+              <Mix
+                key={`${item.id}${Math.random()}`}
+                image={item.images[0].url}
+                name={item.artists[0].name}
+                description={`${item.release_date.split("-")[0]} • ${
+                  item.name
+                }`}
+                albumID={item.id}
+                setAlbumID={setAlbumID}
+                setRandomColor={setRandomColor}
+              />
+            ) : (
+              ""
+            )
+          )}
         </div>
       </div>
     </div>

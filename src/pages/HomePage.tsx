@@ -48,8 +48,8 @@ function HomePage({
   return (
     <div className="home-page">
       {homePageCategory.length > 0
-        ? homePageCategory.map((category: ICategory) => {
-            return (
+        ? homePageCategory.map((category: ICategory) =>
+            category ? (
               <MixesBlock
                 name={category.name}
                 categoryID={category.id}
@@ -59,8 +59,10 @@ function HomePage({
                 setCategoryName={setCategoryName}
                 key={category.name}
               />
-            );
-          })
+            ) : (
+              ""
+            )
+          )
         : ""}
     </div>
   );

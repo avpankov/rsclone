@@ -36,7 +36,7 @@ function PlaylistPage({
   const [list, setList] = useState<[]>([]);
   const [strId, setStrId] = useState("");
   const [listIds, setListIds] = useState([]);
-  const [insideMyPlaylist, setInsideMyPlaylist] = useState(false)
+  const [insideMyPlaylist, setInsideMyPlaylist] = useState(false);
 
   const audio = document.querySelector(".playback") as HTMLAudioElement;
 
@@ -76,22 +76,21 @@ function PlaylistPage({
   }, []);
 
   useEffect(() => {
-    if(list.length > 0) {
+    if (list.length > 0) {
       let newIds = list.map((item: any) => {
-        return item.id
-      })
-      checkPlaylist(newIds)
+        return item.id;
+      });
+      checkPlaylist(newIds);
     }
 
     function checkPlaylist(ids: string[]) {
-      for(let i = 0; i < ids.length; i++) {
-        if(ids[i] === playlistID) {
-          return setInsideMyPlaylist(true)
+      for (let i = 0; i < ids.length; i++) {
+        if (ids[i] === playlistID) {
+          return setInsideMyPlaylist(true);
         }
       }
     }
-
-  }, [list])
+  }, [list]);
 
   const getFollowers = (followers: string) => {
     const reverse = followers.split("").reverse().join("");
@@ -158,7 +157,11 @@ function PlaylistPage({
       />
 
       <div className="tracklist-table">
-        <PageControlPanel color={randomColor} setIconHeart={false} playlist={playlist} />
+        <PageControlPanel
+          color={randomColor}
+          setIconHeart={false}
+          playlist={playlist}
+        />
         <div className="tracklist-table_title">
           <div className="title-number">#</div>
           <div className="title-info">title</div>
@@ -171,34 +174,38 @@ function PlaylistPage({
         <div className="line"></div>
         {playlist ? (
           playlist.tracks.items.length > 0 ? (
-            playlist.tracks.items.map((item, index) => (
-              <TracklistRow
-                key={`${item.track.name}${Math.random()}`}
-                number={index + 1}
-                image={item.track.album.images[0].url}
-                name={item.track.name}
-                trackID={item.track.id}
-                setTrackID={setTrackID}
-                artist={item.track.artists[0].name}
-                artistID={item.track.artists[0].id}
-                setArtistID={setArtistID}
-                album={item.track.album.name}
-                albumID={item.track.album.id}
-                setAlbumID={setAlbumID}
-                data={item.added_at}
-                duration={item.track.duration_ms}
-                uri={item.track.uri}
-                list={list}
-                playlistId={playlist.id}
-                addedTrack={listIds[playlist?.tracks.items.indexOf(item)]}
-                setPlaylists={setPlaylists}
-                setRandomColor={setRandomColor}
-                isPlaying={
-                  item.track.id === audio.dataset.track_id ? true : false
-                }
-                insideMyPlaylist={insideMyPlaylist}
-              />
-            ))
+            playlist.tracks.items.map((item, index) =>
+              item ? (
+                <TracklistRow
+                  key={`${item.track.name}${Math.random()}`}
+                  number={index + 1}
+                  image={item.track.album.images[0].url}
+                  name={item.track.name}
+                  trackID={item.track.id}
+                  setTrackID={setTrackID}
+                  artist={item.track.artists[0].name}
+                  artistID={item.track.artists[0].id}
+                  setArtistID={setArtistID}
+                  album={item.track.album.name}
+                  albumID={item.track.album.id}
+                  setAlbumID={setAlbumID}
+                  data={item.added_at}
+                  duration={item.track.duration_ms}
+                  uri={item.track.uri}
+                  list={list}
+                  playlistId={playlist.id}
+                  addedTrack={listIds[playlist?.tracks.items.indexOf(item)]}
+                  setPlaylists={setPlaylists}
+                  setRandomColor={setRandomColor}
+                  isPlaying={
+                    item.track.id === audio.dataset.track_id ? true : false
+                  }
+                  insideMyPlaylist={insideMyPlaylist}
+                />
+              ) : (
+                ""
+              )
+            )
           ) : (
             <p className="no-tracks_ad">Sorry... No trial version of tracks</p>
           )

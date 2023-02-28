@@ -56,7 +56,6 @@ function AlbumPage({
     if (album !== null) {
       setStrId(getTracksIds());
     }
-
   }, [album]);
 
   function getTracksIds() {
@@ -119,23 +118,27 @@ function AlbumPage({
         </div>
         <div className="line"></div>
         {album.tracks.items.length > 0 ? (
-          album.tracks.items.map((item) => (
-            <TracklistRow
-              key={`${item.name}${Math.random()}`}
-              number={item.track_number}
-              name={item.name}
-              trackID={item.id}
-              setTrackID={setTrackID}
-              artist={item.artists[0].name}
-              artistID={item.artists[0].id}
-              duration={item.duration_ms}
-              setRandomColor={setRandomColor}
-              isPlaying={item.id === audio.dataset.track_id ? true : false}
-              list={list}
-              addedTrack={listIds[album.tracks.items.indexOf(item)]}
-              uri={item.uri}
-            />
-          ))
+          album.tracks.items.map((item) =>
+            item ? (
+              <TracklistRow
+                key={`${item.name}${Math.random()}`}
+                number={item.track_number}
+                name={item.name}
+                trackID={item.id}
+                setTrackID={setTrackID}
+                artist={item.artists[0].name}
+                artistID={item.artists[0].id}
+                duration={item.duration_ms}
+                setRandomColor={setRandomColor}
+                isPlaying={item.id === audio.dataset.track_id ? true : false}
+                list={list}
+                addedTrack={listIds[album.tracks.items.indexOf(item)]}
+                uri={item.uri}
+              />
+            ) : (
+              ""
+            )
+          )
         ) : (
           <p className="no-tracks_ad">Sorry... No trial version of tracks</p>
         )}

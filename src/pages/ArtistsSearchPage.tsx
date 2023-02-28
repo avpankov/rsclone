@@ -28,21 +28,25 @@ function ArtistsSearchPage({
   return (
     <div className="mixes mixes-search">
       {artists &&
-        artists.map((artist) => (
-          <Mix
-            key={artist.id}
-            image={
-              artist.images?.length
-                ? artist.images[0].url
-                : "https://lab.possan.se/thirtify/images/placeholder-playlist.png"
-            }
-            name={artist.name}
-            description="Artist"
-            artistID={artist.id}
-            setArtistID={setArtistID}
-            setRandomColor={setRandomColor}
-          />
-        ))}
+        artists.map((artist) =>
+          artist ? (
+            <Mix
+              key={artist.id}
+              image={
+                artist.images?.length
+                  ? artist.images[0].url
+                  : "https://lab.possan.se/thirtify/images/placeholder-playlist.png"
+              }
+              name={artist.name}
+              description="Artist"
+              artistID={artist.id}
+              setArtistID={setArtistID}
+              setRandomColor={setRandomColor}
+            />
+          ) : (
+            ""
+          )
+        )}
     </div>
   );
 }

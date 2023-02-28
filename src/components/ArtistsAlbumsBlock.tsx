@@ -41,23 +41,27 @@ function ArtistsAlbumsBlock({
         </p>
       </div>
       <div className="mixes">
-        {albums?.map((item) => (
-          <Mix
-            key={`${item.name}${Math.random()}`}
-            image={
-              item.images && item.images.length > 0
-                ? item.images[0].url
-                : "https://lab.possan.se/thirtify/images/placeholder-playlist.png"
-            }
-            name={item.name}
-            description={`${item.release_date.slice(0, 4)} • ${
-              item.album_type
-            }`}
-            albumID={item.id}
-            setAlbumID={setAlbumID}
-            setRandomColor={setRandomColor}
-          />
-        ))}
+        {albums?.map((item) =>
+          item ? (
+            <Mix
+              key={`${item.name}${Math.random()}`}
+              image={
+                item.images && item.images.length > 0
+                  ? item.images[0].url
+                  : "https://lab.possan.se/thirtify/images/placeholder-playlist.png"
+              }
+              name={item.name}
+              description={`${item.release_date.slice(0, 4)} • ${
+                item.album_type
+              }`}
+              albumID={item.id}
+              setAlbumID={setAlbumID}
+              setRandomColor={setRandomColor}
+            />
+          ) : (
+            ""
+          )
+        )}
       </div>
     </div>
   );

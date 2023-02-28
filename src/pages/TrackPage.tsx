@@ -96,7 +96,11 @@ function TrackPage({
       />
 
       <div className="tracklist-table">
-        <PageControlPanel color={randomColor} setIconHeart={true} track={track} />
+        <PageControlPanel
+          color={randomColor}
+          setIconHeart={true}
+          track={track}
+        />
       </div>
 
       <div className="popular-tracks">
@@ -107,19 +111,23 @@ function TrackPage({
 
         {topTracks ? (
           topTracks.tracks.length > 0 ? (
-            topTracks.tracks.map((item, index) => (
-              <TracklistRow
-                key={`${item.name}${Math.random()}`}
-                number={index + 1}
-                image={item.album!.images[0].url}
-                name={item.name}
-                trackID={item.id}
-                setTrackID={setTrackID}
-                duration={item.duration_ms}
-                setRandomColor={setRandomColor}
-                isPlaying={item.id === audio.dataset.track_id ? true : false}
-              />
-            ))
+            topTracks.tracks.map((item, index) =>
+              item ? (
+                <TracklistRow
+                  key={`${item.name}${Math.random()}`}
+                  number={index + 1}
+                  image={item.album!.images[0].url}
+                  name={item.name}
+                  trackID={item.id}
+                  setTrackID={setTrackID}
+                  duration={item.duration_ms}
+                  setRandomColor={setRandomColor}
+                  isPlaying={item.id === audio.dataset.track_id ? true : false}
+                />
+              ) : (
+                ""
+              )
+            )
           ) : (
             <p className="no-tracks_ad">Sorry... No trial version of tracks</p>
           )
