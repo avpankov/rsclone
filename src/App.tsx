@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import PlayingBar from "./components/view/PlayingBar";
 import AuthPage from "./pages/AuthPage";
@@ -20,7 +20,7 @@ import SectionPage from "./pages/SectionPage";
 
 function App() {
   const CLIENT_ID = "1f1f06f4b7fc4796921496a5f9a14d20";
-  const REDIRECT_URI = "http://localhost:3000";
+  const REDIRECT_URI = "https://avpankov.github.io/rsclone";
   const AUTH_ENDPOINT = "http://accounts.spotify.com/authorize";
   const RESPONSE_TYPE = "token";
 

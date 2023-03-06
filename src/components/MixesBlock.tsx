@@ -49,20 +49,22 @@ function MixesBlock({
       <div className="mixes">
         {playlists.length > 0
           ? playlists
-            .slice(0, 7)
-            .map((playlist: IPlaylistsItems) => (
-              playlist ? (
-                <Mix
-                  key={`${playlist.name}${Math.random()}`}
-                  image={playlist.images[0].url}
-                  name={playlist.name}
-                  description={playlist.description}
-                  playlistID={playlist.id}
-                  setPlaylistsID={setPlaylistsID}
-                  setRandomColor={setRandomColor}
-                />
-              ) : ""
-              ))
+              .slice(0, 7)
+              .map((playlist: IPlaylistsItems) =>
+                playlist ? (
+                  <Mix
+                    key={`${playlist.name}${Math.random()}`}
+                    image={playlist.images[0].url}
+                    name={playlist.name}
+                    description={playlist.description}
+                    playlistID={playlist.id}
+                    setPlaylistsID={setPlaylistsID}
+                    setRandomColor={setRandomColor}
+                  />
+                ) : (
+                  ""
+                )
+              )
           : ""}
       </div>
     </div>
